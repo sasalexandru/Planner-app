@@ -1,5 +1,3 @@
-import {InputTypes} from '../constants/enums';
-
 export const emailValidation = email => {
   let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   if (email === '') {

@@ -14,7 +14,6 @@ CustomTextInput = ({
   multiline = false,
   editable = true,
   keyboardType = 'default',
-  isPasswordVisible = false,
   inputChecker,
 }) => {
   const [isInputSelected, setIsInputSelected] = useState(false);
@@ -33,7 +32,6 @@ CustomTextInput = ({
         placeholder={placeholder}
         keyboardType={keyboardType}
         selectionColor="white"
-        secureTextEntry={isPasswordVisible}
         editable={editable}
         numberOfLines={numberOfLines}
         multiline={multiline}
