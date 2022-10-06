@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {passwordValidation} from '../utils/inputUtils';
 
 PasswordTextInput = ({
-  label = 'Label',
+  label = '',
   placeholder = '',
   inputStyle,
   labelStyle,

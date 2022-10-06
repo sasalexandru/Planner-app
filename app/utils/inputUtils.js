@@ -14,7 +14,7 @@ export const emailValidation = email => {
 export const passwordValidation = password => {
   let oneUpper = /(?=.*[A-Z])/;
   let oneDigit = /(?=.*[0-9])/;
-
+  let oneSpecial = /([^A-Za-z0-9])/;
   console.log(password);
 
   if (password.length <= 6) {
@@ -25,6 +25,8 @@ export const passwordValidation = password => {
     return 'Required at least one uppercase!';
   } else if (!password.match(oneDigit)) {
     return 'Required at least one digit!';
+  } else if(!password.match(oneSpecial)){
+    return 'Required at least on special character';
   } else {
     return '';
   }
