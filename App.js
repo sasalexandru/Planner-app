@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import {
   SafeAreaView,
@@ -15,68 +15,29 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import firestore from '@react-native-firebase/firestore';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CustomTextInput from './app/components/customTextInput';
+import PasswordTextInput from './app/components/passwordTextInput';
+import {Colors} from './app/constants/colors';
 
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-
-const App = ()  => {
-
-  addToFirebase = () =>{
-    const firest = firestore().collection('Users').add({name: 'Alex', lastName: 'Sas'}).then(() => console.log('ADDED'))
-    console.log('firest', firest);
-  }
-
-
+const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar
-        barStyle={'dark-content'}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic">
-        <View
-          style={{
-            backgroundColor: Colors.black,
-          }}>
-          <TouchableOpacity
-            style={{
-              justifyContent: 'center',
-              alignSelf: 'center',
-              marginTop: 50,
-            }}
-            onPress={addToFirebase}
-           >
-            <Text style={{color: 'white'}}>ADD</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      contentContainerStyle={styles.scrollViewStyle}>
+      <CustomTextInput label={'Email'}></CustomTextInput>
+      <PasswordTextInput label={'Password'}></PasswordTextInput>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  scrollViewStyle:{
+    flex: 1,
+    marginHorizontal: 20,
+  }
 });
 
 export default App;

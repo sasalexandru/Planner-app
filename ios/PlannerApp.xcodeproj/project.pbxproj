@@ -13,6 +13,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		36BF856D28EC5A9B00CD31CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36BF856C28EC5A9B00CD31CB /* GoogleService-Info.plist */; };
+		36BF859F28EF23BA00CD31CB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858328EF19C800CD31CB /* FontAwesome.ttf */; };
+		36BF85A028EF23BA00CD31CB /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858E28EF19C800CD31CB /* Foundation.ttf */; };
+		36BF85A128EF23BA00CD31CB /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858D28EF19C800CD31CB /* Ionicons.ttf */; };
+		36BF85A228EF23BA00CD31CB /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858B28EF19C800CD31CB /* MaterialCommunityIcons.ttf */; };
+		36BF85A328EF23BA00CD31CB /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858728EF19C800CD31CB /* MaterialIcons.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-PlannerApp-PlannerAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PlannerApp-PlannerAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -39,6 +44,11 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlannerApp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-PlannerApp-PlannerAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlannerApp-PlannerAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BF856C28EC5A9B00CD31CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36BF858328EF19C800CD31CB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		36BF858728EF19C800CD31CB /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		36BF858B28EF19C800CD31CB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		36BF858D28EF19C800CD31CB /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		36BF858E28EF19C800CD31CB /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-PlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-PlannerApp/Pods-PlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-PlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerApp.release.xcconfig"; path = "Target Support Files/Pods-PlannerApp/Pods-PlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-PlannerApp-PlannerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerApp-PlannerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PlannerApp-PlannerAppTests/Pods-PlannerApp-PlannerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +118,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		36BF856E28EF16AD00CD31CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				36BF858328EF19C800CD31CB /* FontAwesome.ttf */,
+				36BF858E28EF19C800CD31CB /* Foundation.ttf */,
+				36BF858D28EF19C800CD31CB /* Ionicons.ttf */,
+				36BF858B28EF19C800CD31CB /* MaterialCommunityIcons.ttf */,
+				36BF858728EF19C800CD31CB /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +140,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				36BF856E28EF16AD00CD31CB /* Fonts */,
 				36BF856C28EC5A9B00CD31CB /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* PlannerApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -246,6 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BF859F28EF23BA00CD31CB /* FontAwesome.ttf in Resources */,
+				36BF85A028EF23BA00CD31CB /* Foundation.ttf in Resources */,
+				36BF85A128EF23BA00CD31CB /* Ionicons.ttf in Resources */,
+				36BF85A228EF23BA00CD31CB /* MaterialCommunityIcons.ttf in Resources */,
+				36BF85A328EF23BA00CD31CB /* MaterialIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				36BF856D28EC5A9B00CD31CB /* GoogleService-Info.plist in Resources */,
