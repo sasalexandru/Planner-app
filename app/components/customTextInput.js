@@ -33,6 +33,7 @@ CustomTextInput = ({
         keyboardType={keyboardType}
         selectionColor="white"
         editable={editable}
+        secureTextEntry={false}
         numberOfLines={numberOfLines}
         multiline={multiline}
         onFocus={() => setIsInputSelected(true)}
