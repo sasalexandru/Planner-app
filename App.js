@@ -20,15 +20,15 @@ import {
 
 import CustomTextInput from './app/components/customTextInput';
 import PasswordTextInput from './app/components/passwordTextInput';
-import {Colors} from './app/constants/colors';
+import { emailValidation } from './app/utils/inputUtils';
 
 const App = () => {
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
       contentContainerStyle={styles.scrollViewStyle}>
-      <CustomTextInput label={'Email'}></CustomTextInput>
-      <PasswordTextInput label={'Password'}></PasswordTextInput>
+      <CustomTextInput label={'Email'} placeholder={'Introduce your email address'} onChangeText={() => {}} inputChecker={emailValidation}></CustomTextInput>
+      <PasswordTextInput label={'Password'} placeholder={'Introduce your password'} onChangeText={() => {}}></PasswordTextInput>
     </ScrollView>
   );
 };

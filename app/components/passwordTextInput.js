@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {TextInput, View, Text, StyleSheet} from 'react-native';
+import {TextInput, View, Text, StyleSheet, Pressable} from 'react-native';
 import {Colors} from '../constants/colors';
 import {TextValues} from '../constants/textValues';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {passwordValidation} from '../utils/inputUtils';
 
 PasswordTextInput = ({
   label = 'Label',
@@ -12,16 +13,17 @@ PasswordTextInput = ({
   errorStyle,
   onChangeText,
   numberOfLines = 1,
-  errorMessage = null,
   multiline = false,
   editable = true,
   keyboardType = 'default',
-  isPasswordVisible = false,
-}) => {
-  const [isInputSelected, setIsInputSelected] = useState(false);
 
+}) => {
+  const [textInput, setTextInput] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isInputSelected, setIsInputSelected] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   return (
-    <View>
+    <View style={{width: '100%'}}>
       <Text style={{...styles.labelTextStyle, ...labelStyle}}>{label}</Text>
       <View
         style={{
@@ -30,27 +32,38 @@ PasswordTextInput = ({
           color: 'white',
         }}>
         <TextInput
-          style={{...styles.inputStyle, color: 'white'}}
+          style={{...styles.inputStyle, ...inputStyle, color: 'white'}}
           placeholder={placeholder}
           keyboardType={keyboardType}
           selectionColor="white"
-          secureTextEntry={isPasswordVisible}
+          secureTextEntry={isVisible}
           editable={editable}
           numberOfLines={numberOfLines}
           multiline={multiline}
           onFocus={() => setIsInputSelected(true)}
-          onBlur={() => setIsInputSelected(false)}
-          onChangeText={onChangeText}></TextInput>
-        <Icon
-          name='eye'
-          size={30}
-          style={{
-            color: 'white',
-            marginLeft: 5,
-          }}></Icon>
+          onBlur={() => {
+            setIsInputSelected(false);
+            const error = passwordValidation(textInput);
+            setErrorMessage(error);
+          }}
+          onChangeText={text => {
+            setTextInput(text);
+            onChangeText(text);
+          }}></TextInput>
+        <Pressable onPress={() => setIsVisible(!isVisible)}>
+          <Icon
+            name={isVisible ? 'eye' : 'eye-off'}
+            size={25}
+            style={{
+              color: 'white',
+              marginHorizontal: 5,
+            }}></Icon>
+        </Pressable>
       </View>
       {errorMessage && (
-        <Text style={styles.errorMessageStyle}>{errorMessage}</Text>
+        <Text style={{...styles.errorMessageStyle, errorStyle}}>
+          {errorMessage}
+        </Text>
       )}
     </View>
   );
@@ -60,10 +73,11 @@ export default PasswordTextInput;
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    height: 50,
     borderRadius: 6,
     borderWidth: 2,
     backgroundColor: 'transparent',
+    width: '100%',
     fontSize: TextValues.textSize,
     paddingHorizontal: 5,
     justifyContent: 'space-between',
@@ -71,6 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   inputStyle: {
+    flex: 1,
     height: 40,
     fontSize: TextValues.textSize,
     paddingHorizontal: 5,

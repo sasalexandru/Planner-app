@@ -11,23 +11,24 @@ CustomTextInput = ({
   errorStyle,
   onChangeText,
   numberOfLines = 1,
-  errorMessage = null,
   multiline = false,
   editable = true,
   keyboardType = 'default',
   isPasswordVisible = false,
+  inputChecker,
 }) => {
   const [isInputSelected, setIsInputSelected] = useState(false);
-
+  const [textInput, setTextInput] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   return (
-    <View>
+    <View style={{width: '100%'}}>
       <Text style={{...styles.labelTextStyle, ...labelStyle}}>{label}</Text>
       <TextInput
         style={{
           ...styles.textInputStyle,
           ...inputStyle,
           borderColor: isInputSelected ? Colors.primaryColor : 'white',
-          color: 'white'
+          color: 'white',
         }}
         placeholder={placeholder}
         keyboardType={keyboardType}
@@ -37,10 +38,19 @@ CustomTextInput = ({
         numberOfLines={numberOfLines}
         multiline={multiline}
         onFocus={() => setIsInputSelected(true)}
-        onBlur={() => setIsInputSelected(false)}
-        onChangeText={onChangeText}></TextInput>
+        onBlur={() => {
+            setIsInputSelected(false);
+            if(inputChecker){
+                const error = inputChecker(textInput);
+                setErrorMessage(error);
+            }
+        }}
+        onChangeText={(text) => {
+            onChangeText(text);
+            setTextInput(text);
+        }}></TextInput>
       {errorMessage && (
-        <Text style={styles.errorMessageStyle}>{errorMessage}</Text>
+        <Text style={{...styles.errorMessageStyle,...errorStyle}}>{errorMessage}</Text>
       )}
     </View>
   );
@@ -50,7 +60,7 @@ export default CustomTextInput;
 
 const styles = StyleSheet.create({
   textInputStyle: {
-    height: 40,
+    height: 50,
     borderRadius: 6,
     borderWidth: 2,
     backgroundColor: 'transparent',
