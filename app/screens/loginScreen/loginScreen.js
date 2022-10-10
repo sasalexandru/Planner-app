@@ -1,19 +1,26 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, ImageBackground} from 'react-native';
 import ClickableText from '../../components/clickableText';
 import CustomSubmitButton from '../../components/customSubmitButton';
 import CustomTextInput from '../../components/customTextInput';
 import PasswordTextInput from '../../components/passwordTextInput';
 import {TextValues} from '../../constants/textValues';
 import {emailValidation} from '../../utils/inputUtils';
+import imageAsset from '../../assets/subject.png';
 const LoginScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <View style={styles.container}>
+      <ImageBackground
+        source={require('../../assets/subject.png')}
+        style={{height: 150}}
+        resizeMode="contain"></ImageBackground>
       <View>
-        <Text style={styles.titleTextStyle}>{isLogin? 'Login' : 'Register'}</Text>
+        <Text style={styles.titleTextStyle}>
+          {isLogin ? 'Login' : 'Register'}
+        </Text>
       </View>
       <View>
         {!isLogin && (
@@ -37,7 +44,13 @@ const LoginScreen = props => {
           label={'Password'}
           placeholder={'Introduce your password'}
           onChangeText={() => {}}></PasswordTextInput>
-        <ClickableText text={isLogin? `Don't have an account? Sign up!` : 'Already have an account?'} onPress={() => setIsLogin(!isLogin)}></ClickableText>
+        <ClickableText
+          text={
+            isLogin
+              ? `Don't have an account? Sign up!`
+              : 'Already have an account?'
+          }
+          onPress={() => setIsLogin(!isLogin)}></ClickableText>
       </View>
       <View>
         <CustomSubmitButton
@@ -62,6 +75,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: TextValues.titleSize,
     alignSelf: 'center',
-    marginTop: 25,
+    fontWeight: 'bold',
   },
 });
