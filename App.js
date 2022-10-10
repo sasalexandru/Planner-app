@@ -18,17 +18,16 @@ import {
   View,
 } from 'react-native';
 
-import CustomTextInput from './app/components/customTextInput';
-import PasswordTextInput from './app/components/passwordTextInput';
-import { emailValidation } from './app/utils/inputUtils';
+import LoginScreen from './app/screens/loginScreen/loginScreen';
+
 
 const App = () => {
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
       contentContainerStyle={styles.scrollViewStyle}>
-      <CustomTextInput label={'Email'} placeholder={'Introduce your email address'} onChangeText={() => {}} inputChecker={emailValidation}></CustomTextInput>
-      <PasswordTextInput label={'Password'} placeholder={'Introduce your password'} onChangeText={() => {}}></PasswordTextInput>
+      <LoginScreen></LoginScreen>
+
     </ScrollView>
   );
 };

@@ -16,7 +16,6 @@ PasswordTextInput = ({
   multiline = false,
   editable = true,
   keyboardType = 'default',
-
 }) => {
   const [textInput, setTextInput] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
@@ -28,7 +27,7 @@ PasswordTextInput = ({
       <View
         style={{
           ...styles.container,
-          borderColor: isInputSelected ? Colors.primaryColor : 'white',
+          borderColor: isInputSelected ? Colors.primaryColor : '#36454f',
           color: 'white',
         }}>
         <TextInput
@@ -52,7 +51,7 @@ PasswordTextInput = ({
           }}></TextInput>
         <Pressable onPress={() => setIsVisible(!isVisible)}>
           <Icon
-            name={isVisible ? 'eye' : 'eye-off'}
+            name={isVisible ? 'eye-off' : 'eye'}
             size={25}
             style={{
               color: 'white',
@@ -74,9 +73,9 @@ export default PasswordTextInput;
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    borderRadius: 6,
+    borderRadius: 12,
     borderWidth: 2,
-    backgroundColor: 'transparent',
+    backgroundColor: '#343434',
     width: '100%',
     fontSize: TextValues.textSize,
     paddingHorizontal: 5,

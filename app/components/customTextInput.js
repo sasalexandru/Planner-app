@@ -26,7 +26,7 @@ CustomTextInput = ({
         style={{
           ...styles.textInputStyle,
           ...inputStyle,
-          borderColor: isInputSelected ? Colors.primaryColor : 'white',
+          borderColor: isInputSelected ? Colors.primaryColor : '#36454f',
           color: 'white',
         }}
         placeholder={placeholder}
@@ -60,9 +60,9 @@ export default CustomTextInput;
 const styles = StyleSheet.create({
   textInputStyle: {
     height: 50,
-    borderRadius: 6,
+    borderRadius: 12,
     borderWidth: 2,
-    backgroundColor: 'transparent',
+    backgroundColor: '#343434',
     fontSize: TextValues.textSize,
     paddingHorizontal: 5,
   },

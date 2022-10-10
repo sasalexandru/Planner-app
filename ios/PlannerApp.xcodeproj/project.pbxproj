@@ -13,11 +13,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		36BF856D28EC5A9B00CD31CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36BF856C28EC5A9B00CD31CB /* GoogleService-Info.plist */; };
-		36BF859F28EF23BA00CD31CB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858328EF19C800CD31CB /* FontAwesome.ttf */; };
-		36BF85A028EF23BA00CD31CB /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858E28EF19C800CD31CB /* Foundation.ttf */; };
-		36BF85A128EF23BA00CD31CB /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858D28EF19C800CD31CB /* Ionicons.ttf */; };
-		36BF85A228EF23BA00CD31CB /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858B28EF19C800CD31CB /* MaterialCommunityIcons.ttf */; };
-		36BF85A328EF23BA00CD31CB /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF858728EF19C800CD31CB /* MaterialIcons.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-PlannerApp-PlannerAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PlannerApp-PlannerAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -269,11 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BF859F28EF23BA00CD31CB /* FontAwesome.ttf in Resources */,
-				36BF85A028EF23BA00CD31CB /* Foundation.ttf in Resources */,
-				36BF85A128EF23BA00CD31CB /* Ionicons.ttf in Resources */,
-				36BF85A228EF23BA00CD31CB /* MaterialCommunityIcons.ttf in Resources */,
-				36BF85A328EF23BA00CD31CB /* MaterialIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				36BF856D28EC5A9B00CD31CB /* GoogleService-Info.plist in Resources */,
