@@ -18,7 +18,6 @@ const CustomSubmitButton = ({
   return (
     <TouchableOpacity
       onPress={() => {
-        console.log('PRESS');
         onSubmit();
       }}
       style={{...styles.containerStyle, buttonStyle}}
@@ -44,7 +43,8 @@ export default CustomSubmitButton;
 
 const styles = StyleSheet.create({
   containerStyle: {
-    marginVertical: 15,
+    marginTop: 15,
+    marginBottom: 50,
     height: 50,
   },
   textStyle: {
