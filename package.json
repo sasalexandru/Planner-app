@@ -7,22 +7,29 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.10",
+    "@react-native-community/netinfo": "^9.3.4",
     "@react-native-firebase/app": "^15.7.0",
     "@react-native-firebase/firestore": "^15.7.0",
     "@react-navigation/native": "^6.0.13",
+    "@redux-devtools/extension": "^3.2.3",
     "@reduxjs/toolkit": "^1.8.5",
     "lottie-react-native": "^5.1.4",
     "react": "18.1.0",
     "react-native": "0.70.2",
     "react-native-keychain": "^8.1.1",
     "react-native-linear-gradient": "^2.6.2",
+    "react-native-offline": "^6.0.0",
     "react-native-safe-area-context": "^4.4.1",
     "react-native-saga-offline": "^1.1.1007",
     "react-native-screens": "^3.18.0",
     "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.4",
+    "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.1"
   },
   "devDependencies": {
@@ -33,6 +40,7 @@
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
+    "react-native-debugger-open": "^0.3.25",
     "react-test-renderer": "18.1.0"
   },
   "jest": {

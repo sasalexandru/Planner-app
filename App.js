@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 
 import {
   SafeAreaView,
@@ -17,26 +17,37 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { connect } from 'react-redux';
+import { login } from './app/redux/actions/authActions';
 
 import LoginScreen from './app/screens/loginScreen/loginScreen';
 
-
-const App = () => {
-  return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      contentContainerStyle={styles.scrollViewStyle}>
-      <LoginScreen></LoginScreen>
-
-    </ScrollView>
-  );
-};
+class App extends Component {
+  render() {
+    console.log(this.props);
+    return (
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={styles.scrollViewStyle}>
+        <LoginScreen></LoginScreen>
+      </ScrollView>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollViewStyle:{
+  scrollViewStyle: {
     flex: 1,
     marginHorizontal: 20,
-  }
+  },
 });
-
-export default App;
+const mapStateToProps = appState => {
+  const store = appState;
+  return {store};
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+      login: (userCredentials) => dispatch(login(userCredentials)),
+    };
+  };
+export default connect(mapStateToProps, mapDispatchToProps)(App);

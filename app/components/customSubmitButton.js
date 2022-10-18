@@ -18,6 +18,7 @@ const CustomSubmitButton = ({
   return (
     <TouchableOpacity
       onPress={() => {
+        console.log('asdas')
         onSubmit();
       }}
       style={{...styles.containerStyle, buttonStyle}}
