@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {configureStore, combineReducers, compose} from '@reduxjs/toolkit';
+import {configureStore, combineReducers, compose, applyMiddleware} from '@reduxjs/toolkit';
 import {createNetworkMiddleware} from 'react-native-offline';
 import authReducer from './reducers/authReducer';
 import {reducer as network} from 'react-native-offline'
 import {persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from './sagas/saga';
-import { composeWithDevTools } from '@redux-devtools/extension';
+import { composeWithDevTools, composeWithDevToolsLogOnly } from '@redux-devtools/extension';
 
 
 
@@ -32,7 +32,7 @@ const sagaMiddleware = createSagaMiddleware();
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const middleware = [networkMiddleware,sagaMiddleware];
 
-const store = configureStore({reducer: persistedReducer,middleware: middleware,enhancers: composeWithDevTools(middleware)});
+const store = configureStore({reducer: persistedReducer,middleware: middleware,});
 sagaMiddleware.run(rootSaga);
 export default store;
 

@@ -24,7 +24,7 @@ import LoginScreen from './app/screens/loginScreen/loginScreen';
 
 class App extends Component {
   render() {
-    console.log(this.props);
+    console.log('ASD');
     return (
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
