@@ -7,9 +7,11 @@ import PasswordTextInput from '../../components/passwordTextInput';
 import {TextValues} from '../../constants/textValues';
 import {emailValidation} from '../../utils/inputUtils';
 import imageAsset from '../../assets/subject.png';
+import Auth from '../../service/auth';
 const LoginScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [user, setUser] = useState({firstName: '', lastName: '', email:'', password: ''});
 
   return (
     <View style={styles.container}>
@@ -27,23 +29,31 @@ const LoginScreen = props => {
           <CustomTextInput
             label={'First Name'}
             placeholder={'Introduce your first name'}
-            onChangeText={() => {}}></CustomTextInput>
+            onChangeText={firstName => {
+              setUser({...user, firstName: firstName});
+            }}></CustomTextInput>
         )}
         {!isLogin && (
           <CustomTextInput
             label={'Last Name'}
             placeholder={'Introduce your last name'}
-            onChangeText={() => {}}></CustomTextInput>
+            onChangeText={lastName => {
+              setUser({...user, lastName: lastName});
+            }}></CustomTextInput>
         )}
         <CustomTextInput
           label={'Email'}
           placeholder={'Introduce your email address'}
-          onChangeText={() => {}}
+          onChangeText={email => {
+            setUser({...user, email: email});
+          }}
           inputChecker={emailValidation}></CustomTextInput>
         <PasswordTextInput
           label={'Password'}
           placeholder={'Introduce your password'}
-          onChangeText={() => {}}></PasswordTextInput>
+          onChangeText={password => {
+            setUser({...user, password: password});
+          }}></PasswordTextInput>
         <ClickableText
           text={
             isLogin
@@ -56,6 +66,12 @@ const LoginScreen = props => {
         <CustomSubmitButton
           onSubmit={() => {
             setIsLoading(!isLoading);
+            if(isLogin){
+              console.log('USER',user);
+              Auth.login(user.email,user.password);
+            }else{
+              Auth.register(user, (message) => {console.log(message)});
+            }
           }}
           text={'Login'}
           isLoading={isLoading}></CustomSubmitButton>
